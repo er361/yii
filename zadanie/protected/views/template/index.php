@@ -8,5 +8,5 @@ $this->breadcrumbs=array(
 <h1>Страничка для создания шаблона справки</h1>
 
 <?php $this->widget('ext.ckeditor.CKEditor',array(
-	'model' => new SpravkaTemplate
+	'model' => $model
 )) ?>

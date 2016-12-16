@@ -5,8 +5,21 @@ class TemplateController extends Controller
 	public function actionIndex()
 	{
         $model = new SpravkaTemplate;
-		$this->render('index');
+		if(isset($_POST['SpravkaTemplate']))
+        {
+            // collects user input data
+            $model->attributes=$_POST['SpravkaTemplate'];
+            // validates user input and redirect to previous page if validated
+            if($model->validate()){
+                //filter html
+                $unclearHtml = $model->template;
+                $model->template = $this->clearHtml($unclearHtml);
+                $this->redirect(Yii::app()->user->returnUrl);
+            }
+        }
+		$this->render('index',array('model'=>$model));
 	}
+    
 	public function clearHtml($html)
 	{
         $dom = new DOMDocument('1.0');
