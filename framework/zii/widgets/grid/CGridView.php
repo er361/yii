@@ -405,7 +405,6 @@ class CGridView extends CBaseListView
 	 * Creates a {@link CDataColumn} based on a shortcut column specification string.
 	 * @param string $text the column specification string
 	 * @return CDataColumn the column instance
-	 * @throws CException
 	 */
 	protected function createDataColumn($text)
 	{

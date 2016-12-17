@@ -14,6 +14,7 @@ class TemplateController extends Controller
                 //filter html
                 $unclearHtml = $model->template;
                 $model->template = $this->clearHtml($unclearHtml);
+				$model->save();
                 $this->redirect(Yii::app()->user->returnUrl);
             }
         }

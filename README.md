@@ -3,7 +3,6 @@ Yii Web Programming Framework
 
 Thank you for choosing Yii - a high-performance component-based PHP framework.
 
-[![Build Status](https://secure.travis-ci.org/yiisoft/yii.png)](http://travis-ci.org/yiisoft/yii)
 
 INSTALLATION
 ------------
@@ -53,7 +52,7 @@ You can access it with the following URL:
         http://hostname/YiiPath/testdrive/index.php
 
 
-WHAT'S NEXT
+WHAT's NEXT
 -----------
 
 Please visit the project website for tutorials, class reference
