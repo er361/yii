@@ -66,3 +66,15 @@ Session.vim
 
 /composer.lock
 /vendor
+zadanie/assets/
+zadanie/images/
+zadanie/protected/commands/
+zadanie/protected/messages/
+zadanie/protected/runtime/
+zadanie/protected/tests/fixtures/
+zadanie/protected/tests/report/
+zadanie/protected/tests/unit/
+zadanie/protected/vendor/
+zadanie/themes/classic/views/layouts/
+zadanie/themes/classic/views/site/
+zadanie/themes/classic/views/system/
