@@ -18,4 +18,4 @@ $this->menu=array(
 
 <h1>Update Spravka <?php echo $model->id; ?></h1>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php $this->widget('ext.ckeditor.CKEditor',array('model'=>$model)); ?>

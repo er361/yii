@@ -15,7 +15,11 @@ $this->menu=array(
 	array('label'=>'Manage Spravka', 'url'=>array('admin')),
 );
 ?>
-
+<?php
+//стили чтобы скрыть код
+$cs = Yii::app()->getClientScript();
+$cs->registerCss('hide_code','.code{display:none;}');
+?>
 <h1>View Spravka #<?php echo $model->id; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
@@ -23,6 +27,6 @@ $this->menu=array(
 	'attributes'=>array(
 		'id',
 		'type',
-		'template',
+		'template:html',
 	),
 )); ?>

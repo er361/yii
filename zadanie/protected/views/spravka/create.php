@@ -15,4 +15,4 @@ $this->menu=array(
 
 <h1>Create Spravka</h1>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php $this->widget('ext.ckeditor.CKEditor',array('model'=>$model)); ?>
