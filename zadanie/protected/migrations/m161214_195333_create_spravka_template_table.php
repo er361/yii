@@ -4,7 +4,7 @@ class m161214_195333_create_spravka_template_table extends CDbMigration
 {
 	public function up()
 	{
-		$this->createTable('spravka_template',array(
+		$this->createTable('spravka',array(
             'id' => 'pk',
             'type' => 'varchar(500)',
             'template' => 'text'
@@ -13,7 +13,7 @@ class m161214_195333_create_spravka_template_table extends CDbMigration
 
 	public function down()
 	{
-		$this->dropTable('spravka_template');
+		$this->dropTable('spravka');
 	}
 
 	/*
