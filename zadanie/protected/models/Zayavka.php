@@ -9,6 +9,7 @@
  * @property integer $odobreno
  * @property string $prichina
  * @property integer $user_data_id
+ * @property string $from_user
  */
 class Zayavka extends CActiveRecord
 {
@@ -30,10 +31,11 @@ class Zayavka extends CActiveRecord
 		return array(
 			array('odobreno, user_data_id', 'numerical', 'integerOnly'=>true),
 			array('prichina', 'length', 'max'=>500),
+			array('from_user', 'length', 'max'=>50),
 			array('text', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, text, odobreno, prichina, user_data_id', 'safe', 'on'=>'search'),
+			array('id, text, odobreno, prichina, user_data_id, from_user', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -45,7 +47,6 @@ class Zayavka extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'user_data'=>array(self::HAS_ONE,'UserData','id')
 		);
 	}
 
@@ -60,6 +61,7 @@ class Zayavka extends CActiveRecord
 			'odobreno' => 'Odobreno',
 			'prichina' => 'Prichina',
 			'user_data_id' => 'User Data',
+			'from_user' => 'From User',
 		);
 	}
 
@@ -86,6 +88,7 @@ class Zayavka extends CActiveRecord
 		$criteria->compare('odobreno',$this->odobreno);
 		$criteria->compare('prichina',$this->prichina,true);
 		$criteria->compare('user_data_id',$this->user_data_id);
+		$criteria->compare('from_user',$this->from_user,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

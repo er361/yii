@@ -2,6 +2,7 @@
 
 class CabinetController extends Controller
 {
+	public $layout='//layouts/column2';
 	public function actionIndex()
 	{
 		$model=new UserData();
@@ -26,9 +27,20 @@ class CabinetController extends Controller
 			}
             $this->redirect(Yii::app()->getUrlManager()->createUrl('cabinet/index'));
 		}
-		$this->render('_form',array('model'=>$model));
+		$this->render('index',array('model'=>$model));
 	}
 
+	public function actionList(){
+		$criteria = new CDbCriteria;
+		$criteria->condition = 'from_user = :userId';
+		$criteria->params = array(':userId'=>Yii::app()->getUser()->id);
+		$dataProvider=new CActiveDataProvider('Zayavka',array(
+			'criteria'=>$criteria
+		));
+		$this->render('list',array(
+			'dataProvider'=>$dataProvider,
+		));
+	}
     public function generateZv($model){
         $template = Spravka::model()->findByAttributes(array('type'=>$model->type));
         $zv = new Zayavka;
