@@ -15,13 +15,16 @@ CKEDITOR.plugins.add('phpcode',{
             exec: function(editor){
                 editor.insertHtml('<span class="delete"> Ф.И.О </span>');
                 editor.insertHtml(
-                    '<span class="code">' +
-                        '<?php> echo $model->name<?>' +
                         '&nbsp' +
-                        '<?php> echo $model->familia<?>' +
+                        '<span class="code">' +
+                        '<?php echo $model->name; ?>' +
                         '&nbsp' +
-                        '<?php> echo $model->otchestvo<?>' +
-                    '</span>');
+                        '<?php echo $model->familia; ?>' +
+                        '&nbsp' +
+                        '<?php echo $model->otchestvo; ?>'+
+                        '</span>'+
+                        '&nbsp'
+                );
             }
         });
 
@@ -30,9 +33,12 @@ CKEDITOR.plugins.add('phpcode',{
            exec: function (editor) {
                editor.insertHtml('<span class="delete"> Дата рождения </span>');
                editor.insertHtml(
+                   '&nbsp' +
                    '<span class="code">' +
-                    '<?php> echo $model->birthdate<?>' +
-                   '</span>');
+                    '<?php echo $model->birthdate; ?>'
+                   +'</span>'
+                    + '&nbsp'
+               );
            }
         });
 
@@ -41,9 +47,11 @@ CKEDITOR.plugins.add('phpcode',{
             exec: function (editor) {
                 editor.insertHtml('<span class="delete"> Адрес </span>');
                 editor.insertHtml(
+                    '&nbsp' +
                     '<span class="code">' +
-                    '<?php> echo $model->address<?>' +
-                    '</span>');
+                    '<?php echo $model->address; ?>'
+                    +'</span>'
+                    + '&nbsp');
             }
         });
         //nationality
@@ -51,9 +59,11 @@ CKEDITOR.plugins.add('phpcode',{
             exec: function (editor) {
                 editor.insertHtml('<span class="delete"> Национальность </span>');
                 editor.insertHtml(
+                    '&nbsp' +
                     '<span class="code">' +
-                    '<?php> echo $model->nationality<?>' +
-                    '</span>');
+                    '<?php echo $model->nationality; ?>'
+                    +'</span>'
+                    + '&nbsp');
             }
         });
         //id
@@ -61,9 +71,11 @@ CKEDITOR.plugins.add('phpcode',{
             exec: function (editor) {
                 editor.insertHtml('<span class="delete"> Номер уд. личности </span>');
                 editor.insertHtml(
+                    '&nbsp' +
                     '<span class="code">' +
-                    '<?php> echo $model->id<?>' +
-                    '</span>');
+                    '<?php echo $model->id; ?>'
+                    +'</span>'
+                    + '&nbsp');
             }
         });
 

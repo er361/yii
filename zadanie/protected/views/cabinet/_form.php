@@ -63,9 +63,9 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'id'); ?>
-		<?php echo $form->textField($model,'id'); ?>
-		<?php echo $form->error($model,'id'); ?>
+		<?php echo $form->labelEx($model,'id_number'); ?>
+		<?php echo $form->textField($model,'id_number'); ?>
+		<?php echo $form->error($model,'id_number'); ?>
 	</div>
 
 

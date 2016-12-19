@@ -4,7 +4,7 @@ class CabinetController extends Controller
 {
 	public function actionIndex()
 	{
-		$model=new UserDataModel;
+		$model=new UserData();
 
 		// uncomment the following code to enable ajax-based validation
 
@@ -15,19 +15,27 @@ class CabinetController extends Controller
         }
 
 
-		if(isset($_POST['UserDataModel']))
+		if(isset($_POST['UserData']))
 		{
-			$model->attributes=$_POST['UserDataModel'];
+			$model->attributes=$_POST['UserData'];
 			if($model->validate())
 			{
-				// form inputs are valid, do something here
-				return;
+                $model->save();
+                //созадать заявку на основе данных с этой модели
+                $this->generateZv($model);
 			}
+            $this->redirect(Yii::app()->getUrlManager()->createUrl('cabinet/index'));
 		}
 		$this->render('_form',array('model'=>$model));
 	}
 
-	// Uncomment the following methods and override them if needed
+    public function generateZv($model){
+        $template = Spravka::model()->findByAttributes(array('type'=>$model->type));
+        $zv = new Zayavka;
+        $zv->text = $template->template;
+        $zv->user_data_id = $model->id;
+        $zv->save();
+    }
 
 	public function filters()
 	{

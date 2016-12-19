@@ -30,8 +30,9 @@
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
 				array('label'=>'Home', 'url'=>array('/site/index')),
-				array('label'=>'Cabinet', 'url'=>array('/cabinet/index'), 'visible'=>!Yii::app()->user->isGuest and !Yii::app()->user->isAdmin()),
-				array('label'=>'Spravki','url'=>array('/spravka/index'),'visible'=>Yii::app()->getModule('user')->isAdmin()),
+				array('label'=>'Кабинет', 'url'=>array('/cabinet/index'), 'visible'=>!Yii::app()->user->isGuest and !Yii::app()->user->isAdmin()),
+				array('label'=>'Типы справок','url'=>array('/spravka/index'),'visible'=>Yii::app()->getModule('user')->isAdmin()),
+                array('label'=>'Заявки','url'=>array('/zayavka/index'),'visible'=>Yii::app()->getModule('user')->isAdmin()),
 				array('url'=>Yii::app()->getModule('user')->loginUrl, 'label'=>Yii::app()->getModule('user')->t("Login"), 'visible'=>Yii::app()->user->isGuest),
 				array('url'=>Yii::app()->getModule('user')->registrationUrl, 'label'=>Yii::app()->getModule('user')->t("Register"), 'visible'=>Yii::app()->user->isGuest),
 				array('url'=>Yii::app()->getModule('user')->profileUrl, 'label'=>Yii::app()->getModule('user')->t("Profile"), 'visible'=>!Yii::app()->user->isGuest),

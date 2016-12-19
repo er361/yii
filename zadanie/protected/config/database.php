@@ -11,4 +11,5 @@ return array(
 	'password' => '',
 	'charset' => 'utf8',
 	'tablePrefix' => 'tbl_',
+	'enableProfiling'=>true
 );
