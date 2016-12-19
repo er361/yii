@@ -35,6 +35,7 @@ class UserData extends CActiveRecord
 			array('type, name, familia, otchestvo, nationality, id_number', 'length', 'max'=>50),
 			array('birthdate', 'length', 'max'=>30),
 			array('address', 'length', 'max'=>100),
+			//array('type','existTemplateType'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, type, name, familia, otchestvo, birthdate, address, nationality, id_number', 'safe', 'on'=>'search'),
